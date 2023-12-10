@@ -1,0 +1,26 @@
+<!-- src/app/client-list/client-list.component.html -->
+<div>
+    <div *ngFor="let client of clients">
+        <div>
+            <label>First Name:</label>
+            <input [(ngModel)]="client.firstName" />
+        </div>
+        <div>
+            <label>Last Name:</label>
+            <input [(ngModel)]="client.lastName" />
+        </div>
+        <div>
+            <label>Location:</label>
+            <input [(ngModel)]="client.location" />
+        </div>
+        <div>
+            <label>Appointments:</label>
+            <ul>
+                <li *ngFor="let appointment of client.appointments">{{ appointment }}</li>
+            </ul>
+            <button mat-icon-button (click)="addAppointment(client)">
+          <mat-icon>add</mat-icon>
+        </button>
+        </div>
+    </div>
+</div>
