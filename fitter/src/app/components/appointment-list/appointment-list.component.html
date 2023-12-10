@@ -1,0 +1,12 @@
+<!-- components/appointment-list/appointment-list.component.html -->
+<div *ngFor="let client of clients">
+    <div>
+        <span>{{ client.firstName }} {{ client.lastName }}</span>
+        <span>{{ client.location }}</span>
+        <div *ngFor="let appointment of client.appointments">
+            <span>{{ appointment.dateTime | date: 'medium' }}</span>
+            <button (click)="editAppointment(client, appointment)">Edit</button>
+            <button (click)="deleteAppointment(client, appointment.id)">Delete</button>
+        </div>
+    </div>
+</div>
